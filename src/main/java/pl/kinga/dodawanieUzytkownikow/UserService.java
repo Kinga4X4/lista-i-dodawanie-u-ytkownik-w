@@ -7,7 +7,6 @@ import java.util.List;
 
 @Repository
 public class UserService {
-
     private List<User> usersList;
 
     public UserService(List<User> usersList) {
