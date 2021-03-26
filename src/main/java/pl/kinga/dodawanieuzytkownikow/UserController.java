@@ -1,4 +1,4 @@
-package pl.kinga.dodawanieUzytkownikow;
+package pl.kinga.dodawanieuzytkownikow;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package pl.kinga.dodawanieUzytkownikow;
+package pl.kinga.dodawanieuzytkownikow;
 
 import org.springframework.stereotype.Repository;
 
@@ -9,7 +9,7 @@ import java.util.List;
 public class UserService {
     private List<User> usersList;
 
-    public UserService(List<User> usersList) {
+    public UserService() {
         this.usersList = new ArrayList<>();
         usersList.add(new User("Kinga", "Olek", 25));
         usersList.add(new User("Olek", "Kapusta", 40));

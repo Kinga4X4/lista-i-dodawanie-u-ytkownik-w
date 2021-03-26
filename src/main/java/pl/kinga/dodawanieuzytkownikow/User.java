@@ -1,4 +1,4 @@
-package pl.kinga.dodawanieUzytkownikow;
+package pl.kinga.dodawanieuzytkownikow;
 
 
 public class User {
