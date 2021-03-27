@@ -1,10 +1,7 @@
 package pl.kinga.dodawanieuzytkownikow;
 
-import javassist.compiler.ast.Member;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,32 +33,17 @@ public class UserController {
         return userService.addUser(user);
     }
 
+    @PostMapping("/add")
+    public String addUser(@RequestParam(name = "firstName") String firstName, @RequestParam(name = "lastName")
+            String lastName, @RequestParam(name = "age") int age) {
+        if (firstName.isEmpty()) {
+            return "redirect:/err.html";
+        } else {
+            userService.addUser(new User(firstName, lastName, age));
+            return "redirect:success.html";
+        }
+    }
 }
-
-
-//    @GetMapping("/users")
-//    public @ResponseBody
-//    ResponseEntity<String> getUser() {
-//        User user = new User();
-//        user.setFirstName(user.getFirstName());
-//        user.setLastName(user.getLastName());
-//        user.setAge(user.getAge());
-//        return new ResponseEntity<String>(userService.toString(), HttpStatus.OK);
-//    }
-
-//    @RequestMapping("/users")
-//    public String getUser(Model model, User user) {
-//
-//    }
-
-//    @GetMapping("/index")
-
-
-//    @PostMapping("/add")
-//    public String addNumbers(Model model, CalculatorForm form, BindingResult binding) {
-//        if(binding.hasErrors()) {
-//            return "add"; // powrót do formularza
-//        }
 
 
 
